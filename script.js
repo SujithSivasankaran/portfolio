@@ -83,7 +83,7 @@ function moveCarousel(direction) {
 
 // Swipe detection for mobile devices
 function handleSwipeStart(event) {
-    touchStartX = event.touches[0].clientX; // Get the touch start position
+    touchStartX = events.touches[0].clientX; // Get the touch start position
 }
 
 function handleSwipeEnd(event) {
@@ -101,5 +101,38 @@ function handleSwipeEnd(event) {
 // Add event listeners for swipe functionality
 document.querySelector('.carousel-container').addEventListener('touchstart', handleSwipeStart); // Detect touch start
 document.querySelector('.carousel-container').addEventListener('touchend', handleSwipeEnd);   // Detect touch end
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const carouselContainer = document.querySelector('.carousel-container');
+    const cards = document.querySelectorAll('.card');
+    let currentIndex = 0;
+    let autoScroll;
+
+    function scrollNext() {
+        currentIndex = (currentIndex + 1) % cards.length;
+        carouselContainer.scrollTo({
+            left: carouselContainer.clientWidth * currentIndex,
+            behavior: 'smooth'
+        });
+    }
+
+    function startAutoScroll() {
+        autoScroll = setInterval(scrollNext, 3000); // Scroll every 3 seconds
+    }
+
+    function stopAutoScroll() {
+        clearInterval(autoScroll);
+    }
+
+    if (window.innerWidth <= 800) {
+        startAutoScroll();
+    }
+
+    carouselContainer.addEventListener('touchstart', stopAutoScroll); // Stop scrolling on touch
+});
+
 
 

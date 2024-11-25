@@ -39,9 +39,12 @@ a {
     border-bottom: 2px solid white;
     z-index: 10;
     width: 100%;
+    background-image: url(nav-bg2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .header {
-    background-color: #9e151e;
+    /* background-color: #2b3a7b; */
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, box-shadow 0.3s;
@@ -57,7 +60,7 @@ a {
     align-items: center;
     padding: 1.5rem 2rem;
     z-index: 1;
-    /* background-color: #9e151e; */
+    /* background-color: #2b3a7b; */
 }
 
 .nav-logo {
@@ -87,7 +90,7 @@ a {
 }
 
 .nav-link:hover {
-    color: #ffcccb; /* Change hover color to a lighter shade for better visibility */
+    color: #0077b5; /* Change hover color to a lighter shade for better visibility */
 }
 .nav-link {
     position: relative;
@@ -101,7 +104,7 @@ a {
     display: block;
     margin-top: 5px;
     right: 0;
-    background: #ffcccb;
+    background: #0077b5;
     transition: width 0.4s ease;
     -webkit-transition: width 0.4s ease;
 }
@@ -109,7 +112,7 @@ a {
 .nav-link:hover::after {
     width: 100%;
     left: 0;
-    background: #ffcccb;
+    background: #0077b5;
 }
 .hamburger {
     display: none;
@@ -144,7 +147,10 @@ a {
     }
 
     .nav-menu.active {
-        background-color: #9e151e; 
+        background-image: url(nav-bg2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+        /* background-color: #2b3a7b;  */
         left: 0;
     }
 
@@ -204,7 +210,7 @@ a {
 .title {
     font-size: 5rem;
     text-align: center;
-    color: #9e151e;
+    color: #230fba;
     text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;
     text-decoration: underline;
 }
@@ -214,6 +220,9 @@ a {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    background-image: url('intro-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -239,13 +248,13 @@ a {
 .left h1 {
     font-size: 4vw;
     line-height: 4.4vw;
-    color: black;
+    color: #fff;
 }
 
 .left p {
     font-size: 2vw;
     font-weight: 600;
-    color: black;
+    color: #fff;
     width: 80%;
     margin-top: 2vw;
     margin-bottom: 4vw;
@@ -259,8 +268,8 @@ a {
 .content button {
     font-size: 1.2vw;
     padding: 1.3vw 2.3vw;
-    background-color: #9e151e;
-    color: black;
+    background-color: #2b3a7b;
+    color: white;
     border: none;
     border-radius: 5px;
     font-weight: 700;
@@ -313,7 +322,7 @@ a {
         width: 90%;
         margin-top: 5vw;
         margin-bottom: 6vw;
-        color: black;
+        color: #fff;
     }
 
     .content button {
@@ -337,7 +346,9 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top:2px solid #2b3a7b;
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    /* background: linear-gradient(to bottom, rgba(100, 100, 100, 0.8), rgba(50, 50, 50, 0.5)); */
 }
 
 .about-content {
@@ -349,7 +360,7 @@ a {
     font-size: 3em;
     text-align: center;
     margin: 30px 0;
-    color: #9e151e;
+    color: #2b3a7b;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
@@ -361,7 +372,7 @@ a {
     display: block;
     width: 50px;
     height: 3px;
-    background-color: #9e151e;
+    background-color: #2b3a7b;
     margin: 10px auto 0;
 }
 
@@ -405,12 +416,19 @@ a {
 }
 
 @media (max-width: 800px) {
+    .about-img img {
+        content: url('profile.jpg');
+    }
+
     .about {
         flex-direction: column;
         align-items: center;
         text-align: center;
         border-top: none;
         border-bottom: none;
+        background-image: url('intro-bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .about-content {
@@ -426,7 +444,7 @@ a {
         font-weight: 0;
         line-height: 1.5;
         padding: 0px;
-        color: black;
+        color: #fff;
     }
 
     .about-img img {
@@ -440,7 +458,7 @@ a {
         margin-top: 2rem;
         font-size: 3rem;
         padding: 1.3vw 2.3vw;
-        background-color: #9e151e;
+        background-color: #2b3a7b;
         color: black;
         border: none;
         border-radius: 5px;
@@ -448,7 +466,7 @@ a {
     }
 
     .about-content span {
-        color: #ec5660;
+        color: #0077b5;
         text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;
     }
 }
@@ -469,6 +487,10 @@ a {
 
 /* Chatbot Styles */
 
+/* .chat-box-section {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(200, 200, 200, 0.8)); 
+}  */
+
 .chat {
     display: flex;
     justify-content: center;
@@ -488,7 +510,7 @@ a {
 }
 
 .chat-header {
-    background-color: #9e151e;
+    background-color: #2b3a7b;
     min-height: 2rem;
     /* color: black;
     text-align: center;
@@ -519,7 +541,7 @@ a {
     margin: 0 1rem;
 }
 .ri-github-fill, .ri-linkedin-fill {
-    color: red;
+    color: #2b3a7b;
 }
 .message.bit {
     align-self: flex-start;
@@ -535,7 +557,7 @@ a {
 .message .text {
     padding: 0.8rem;
     border-radius: 8px;
-    background-color: #b45050;
+    background-color: #0077b5;
     color: black;
     font-size: 1.6rem;
     line-height: 1.6;
@@ -545,7 +567,7 @@ a {
 
 
 .message.user .text {
-    background-color: #b45050;
+    background-color: #fff;
 }
 
 .chat-input {
@@ -564,7 +586,7 @@ a {
 .chat-input button {
     padding: 1.5rem 2rem;
     border: none;
-    background-color: #9e151e;
+    background-color: #2b3a7b;
     color: black;
     font-size: 1.6rem;
     cursor: pointer;
@@ -630,6 +652,9 @@ a {
 }
 
 /* Project & Research Work Section */
+/* .projects{
+    background: linear-gradient(to bottom, rgba(100, 100, 100, 0.8), rgba(50, 50, 50, 0.5));
+} */
 
 .carousel-container {
     position: relative;
@@ -651,30 +676,34 @@ a {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     box-sizing: border-box;
     min-height: 300px;
-    border:2px solid black;
+    /* border:2px solid black; */
 }
-
+.plot{
+    max-width: 900px;
+}
 .card h2 {
     font-size: 2.5rem;
     margin-bottom: 15px;
-    color: #9e151e;
+    color: #2b3a7b;
+    text-align: left;
 }
 
 .card p {
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: black;
+    text-align: justify;
 }
 
 .card a {
     font-size: 1.5rem;
-    color: #9e151e;
+    color: #2b3a7b;
     font-weight: bold;
     text-decoration: none;
 }
@@ -683,20 +712,20 @@ a {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background: none;
     color: black;
     border: none;
     padding: 10px;
-    cursor: pointer;
+    /* cursor: pointer; */
     font-size: 20px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     z-index: 10;
     margin:0 20px 0 20px;
 }
 
-.carosal_button:hover {
+/* .carosal_button:hover {
     background-color: rgba(0, 0, 0, 0.8);
-}
+} */
 
 .prev {
     left: 10px;
@@ -707,12 +736,23 @@ a {
 }
 
 @media (max-width: 800px) {
+ 
+    .carousel {
+        display: flex;
+        scroll-snap-align: start;
+    }
+    
     .carousel-container {
         padding: 10px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        display: flex;
+        scroll-behavior: smooth;
     }
 
     .card {
         padding: 15px;
+        scroll-snap-align: center;
     }
 
     .card h2 {
@@ -728,8 +768,9 @@ a {
     }
 
     .carosal_button {
-        font-size: 16px;
-        padding: 8px;
+        /* font-size: 16px;
+        padding: 8px; */
+        display:None;
     }
 }
 
@@ -751,7 +792,7 @@ a {
     font-size: 3em;
     text-align: center;
     margin: 30px 0;
-    color: #9e151e;
+    color: #2b3a7b;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
@@ -763,14 +804,14 @@ a {
     display: block;
     width: 50px;
     height: 3px;
-    background-color: #9e151e;
+    background-color: #2b3a7b;
     margin: 10px auto 0;
 }
 
 .skills {
     padding: 50px 0;
-    /* background-color: #f9f9f9; */
     text-align: center;
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(200, 200, 200, 0.8));  */
 }
 
 .skills-container {
@@ -791,7 +832,7 @@ a {
 
 .skill i {
     font-size: 40px;
-    color: #9e151e;
+    color: #2b3a7b;
     margin-bottom: 10px;
 }
 
@@ -842,7 +883,9 @@ section {
 
 
 .footer {
-    background-color: #9e151e;
+    /* background-color: #2b3a7b; */
+    border-top: 2px solid #2b3a7b; 
+  
     background-image: url('footer-background.jpg');
     background-size: cover;
     background-position: center;
@@ -850,12 +893,12 @@ section {
 
 
 .po {
-    color: #9e151e;
+    color: #2b3a7b;
     font-weight: bold;
-    background-color: #fff;
-    padding: 0 10px;
+    /* background-color: #fff; */
+    /* padding: 0 10px; */
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
 }
 
 
@@ -864,30 +907,11 @@ section {
 
 
 /* Section Backgrounds */
-.about, .chat-box-section, .projects, .skills, .footer {
-    padding: 60px 20px; /* Adjust padding for better spacing */
-    border-top: 2px solid #9e151e; /* Add top border for separation */
-    border-bottom: 2px solid #9e151e; /* Add bottom border for separation */
+.about, .chat-box-section, .projects, .skills  {
+    padding: 60px 20px;
+    border-top: 2px solid #2b3a7b; 
+    border-bottom: 2px solid #2b3a7b; 
 }
 
-.about {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
-}
-
-.chat {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8));
-}
-
-.projects {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
-}
-
-.skills {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8));
-}
-
-.footer {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
-}
 
 
