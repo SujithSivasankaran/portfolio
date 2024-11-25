@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sujith Sivasankaran</title>
+    <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>S</text></svg>">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,7 +21,7 @@
                 <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
                 <li class="nav-item"><a href="#chat" class="nav-link">Let's Chat</a></li>
                 <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -34,15 +37,16 @@
             <div class="content">
                 <div class="left">
                     <h1>Welcome!</h1>
-                    <p>I’m <span>Sujith Sivasankaran</span>, an AI/ML enthusiast from India passionate about advancing
+                    <p>I’m <span class="po">Sujith Sivasankaran</span>, an AI/ML enthusiast from India passionate about
+                        advancing
                         safe and reliable AI systems.</p>
                     <button>Download CV</button>
                     <!-- Add GitHub and LinkedIn icons here -->
                     <div class="social-links">
-                        <a href="https://github.com/yourusername" target="_blank">
+                        <a href="https://github.com/SujithSivasankaran" target="_blank">
                             <i class="ri-github-fill"></i> <!-- GitHub Icon -->
                         </a>
-                        <a href="https://www.linkedin.com/in/yourusername" target="_blank">
+                        <a href="https://in.linkedin.com/in/sujith-sivasankaran" target="_blank">
                             <i class="ri-linkedin-fill"></i> <!-- LinkedIn Icon -->
                         </a>
                     </div>
@@ -60,7 +64,7 @@
             </div>
             <div class="about-content">
                 <h2>About Me</h2>
-                <p>I’m <span>Sujith Sivasankaran</span> , an ML Engineer at Mad Street Den, passionate about building
+                <p>I’m Sujith Sivasankaran, an ML Engineer at Mad Street Den, passionate about building
                     innovative and reliable AI systems that make a difference. My journey, from excelling in
                     national-level sports to winning international hackathons, has taught me resilience, collaboration,
                     and strategic thinking. I find fulfillment in mentoring budding engineers and leveraging AI to solve
@@ -69,10 +73,10 @@
                     easier lives.</p>
                 <button>Download CV</button>
                 <div class="social-links not_for_full_screen">
-                    <a href="https://github.com/yourusername" target="_blank">
+                    <a href="https://github.com/SujithSivasankaran" target="_blank">
                         <i class="ri-github-fill"></i> <!-- GitHub Icon -->
                     </a>
-                    <a href="https://www.linkedin.com/in/yourusername" target="_blank">
+                    <a href="https://in.linkedin.com/in/sujith-sivasankaran" target="_blank">
                         <i class="ri-linkedin-fill"></i> <!-- LinkedIn Icon -->
                     </a>
                 </div>
@@ -80,13 +84,13 @@
         </section>
 
         <!-- Chatbot Section -->
-        <section id="chat">
-
+        <section id="chat" class="chat-box-section">
+            <h2 class="section-title">Let's Chat</h2>
             <div class="chat">
 
                 <div class="chat-container">
                     <div class="chat-header">
-                        <h2>Chat with AI Sujith</h2>
+                        <h2></h2>
                     </div>
                     <div class="chat-messages" id="chatMessages"></div>
                     <div class="chat-input">
@@ -96,8 +100,9 @@
                 </div>
             </div>
         </section>
-        <!-- Project & Research Work Section -->
+
         <section id="projects">
+            <h2 class="section-title">Projects</h2>
             <div class="carousel-container">
                 <div class="carousel">
                     <div class="card">
@@ -109,11 +114,9 @@
                             attacks, recognizing the vulnerability of these models in critical applications. Proposed
                             statistical and model-based
                             approaches to identify key states within an episode, demonstrating that targeting less than
-                            1%
-                            of states could
+                            1% of states could
                             decrease agent performance by over 40%. Developed a long-term impact classifier to
-                            efficiently
-                            identify critical
+                            efficiently identify critical
                             states, achieving an 80.3% reduction in average computation time compared to previous
                             methodologies.
                         </p>
@@ -126,22 +129,19 @@
                         <p>Conducted research on adversarial attacks in autonomous vehicle systems, focusing on steering
                             angle prediction using a nine-layer convolutional neural network. Simulated diverse driving
                             scenarios in Unity to evaluate the impact of adversarial attacks. Under FGSM, observed
-                            steering
-                            angle deviations of up to 6°, with a 12% reduction in lane-keeping performance. Patch-based
-                            attacks resulted in a 15% increase in collision rates. </p>
+                            steering angle deviations of up to 6°, with a 12% reduction in lane-keeping performance.
+                            Patch-based attacks resulted in a 15% increase in collision rates. </p>
                         <p><span>Yet to be Published</p></span>
                     </div>
                     <div class="card">
                         <h2>KnowMeBot</h2>
                         <p>
-
                             I developed a chatbot using OpenAI and LangChain to simulate my persona and answer questions
                             from a custom dataset.
                             By leveraging Retrieval-Augmented Generation (RAG), the chatbot delivers context-based,
                             high-quality interactions.
                             Deployed using Flask, it provides a seamless real-time chat interface with robust handling
-                            of
-                            out-of-scope queries, ensuring an engaging and reliable user experience.
+                            of out-of-scope queries, ensuring an engaging and reliable user experience.
                         </p>
                         <a href="https://example.com" target="_blank">Learn More</a>
                     </div>
@@ -151,22 +151,19 @@
                             sighted and blind users by converting text to Braille and Braille to text. The tool supports
                             seamless interaction through both audio and Braille formats, ensuring inclusivity. It
                             incorporates a CNN-based Braille character classification model, achieving 97% accuracy,
-                            making
-                            the solution highly scalable and enhancing real-time accessibility for diverse user needs.
+                            making the solution highly scalable and enhancing real-time accessibility for diverse user
+                            needs.
                         </p>
                         <a href="https://example.com" target="_blank">Learn More</a>
                     </div>
                     <div class="card">
                         <h2>Flight Delay Predictor</h2>
-                        <p>DDeveloped a predictive model to forecast flight delays, combining binary classification to
+                        <p>Developed a predictive model to forecast flight delays, combining binary classification to
                             identify delayed flights and regression analysis to estimate delay duration. The model
-                            utilized
-                            a Random Forest Classifier and Gradient Boosting Regressor, achieving high accuracy by
-                            addressing data imbalance with SMOTE and integrating comprehensive flight and weather
-                            datasets.
-                            This solution enhances operational efficiency by providing actionable insights for airlines
-                            and
-                            passengers.</p>
+                            utilized a Random Forest Classifier and Gradient Boosting Regressor, achieving high accuracy
+                            by addressing data imbalance with SMOTE and integrating comprehensive flight and weather
+                            datasets. This solution enhances operational efficiency by providing actionable insights for
+                            airlines and passengers.</p>
                         <a href="https://example.com" target="_blank">Learn More</a>
                     </div>
                 </div>
@@ -174,21 +171,52 @@
                 <button class="next carosal_button" onclick="moveCarousel(1)">&#10095;</button>
             </div>
         </section>
-
-
-
-
-
-
-
-        <!-- Footer Section -->
-        <footer class="footer">
-            <div class="footer-content">
-                <p>&copy; 2024 Sujith Sivasankaran. All rights reserved.</p>
+        <section id="skills" class="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <i class="ri-code-s-slash-line"></i>
+                    <h3>Programming Languages</h3>
+                    <p>Python, R, Java, C++, SQL</p>
+                </div>
+                <div class="skill">
+                    <i class="ri-brain-line"></i>
+                    <h3>Machine Learning</h3>
+                    <p>Scikit-Learn, TensorFlow, PyTorch, Keras</p>
+                </div>
+                <div class="skill">
+                    <i class="ri-bar-chart-box-line"></i>
+                    <h3>Data Analysis</h3>
+                    <p>Pandas, NumPy, Matplotlib, Seaborn</p>
+                </div>
+                <div class="skill">
+                    <i class="ri-database-2-line"></i>
+                    <h3>Data Engineering</h3>
+                    <p>Hadoop, Spark, Kafka, Airflow</p>
+                </div>
+                <div class="skill">
+                    <i class="ri-cloud-line"></i>
+                    <h3>Cloud Platforms</h3>
+                    <p>AWS, Google Cloud, Azure</p>
+                </div>
+                <div class="skill">
+                    <i class="ri-shield-keyhole-line"></i>
+                    <h3>DevOps & MLOps</h3>
+                    <p>Docker, Kubernetes, Jenkins, MLflow</p>
+                </div>
             </div>
-        </footer>
+        </section>
 
-        <script src="script.js"></script>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Sujith Sivasankaran. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
