@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sujith Sivasankaran</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">Sujith</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
+                <li class="nav-item"><a href="#chat" class="nav-link">Let's Chat</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Skills</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="roll">
+        <section class="main">
+            <div class="content">
+                <div class="left">
+                    <h1>Welcome!</h1>
+                    <p>I’m <span>Sujith Sivasankaran</span>, an AI/ML enthusiast from India passionate about advancing
+                        safe and reliable AI systems.</p>
+                    <button>Download CV</button>
+                    <!-- Add GitHub and LinkedIn icons here -->
+                    <div class="social-links">
+                        <a href="https://github.com/yourusername" target="_blank">
+                            <i class="ri-github-fill"></i> <!-- GitHub Icon -->
+                        </a>
+                        <a href="https://www.linkedin.com/in/yourusername" target="_blank">
+                            <i class="ri-linkedin-fill"></i> <!-- LinkedIn Icon -->
+                        </a>
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="./profile.jpg" alt="Profile Image">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="about">
+            <div class="about-img">
+                <img src="about-image.jpg" alt="About Me Image">
+            </div>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>I’m <span>Sujith Sivasankaran</span> , an ML Engineer at Mad Street Den, passionate about building
+                    innovative and reliable AI systems that make a difference. My journey, from excelling in
+                    national-level sports to winning international hackathons, has taught me resilience, collaboration,
+                    and strategic thinking. I find fulfillment in mentoring budding engineers and leveraging AI to solve
+                    real-world challenges. With a vision to develop autonomous systems that navigate complex
+                    environments, I am driven by a desire to create impactful solutions and help people lead better,
+                    easier lives.</p>
+                <button>Download CV</button>
+                <div class="social-links not_for_full_screen">
+                    <a href="https://github.com/yourusername" target="_blank">
+                        <i class="ri-github-fill"></i> <!-- GitHub Icon -->
+                    </a>
+                    <a href="https://www.linkedin.com/in/yourusername" target="_blank">
+                        <i class="ri-linkedin-fill"></i> <!-- LinkedIn Icon -->
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chatbot Section -->
+        <section id="chat">
+
+            <div class="chat">
+
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <h2>Chat with AI Sujith</h2>
+                    </div>
+                    <div class="chat-messages" id="chatMessages"></div>
+                    <div class="chat-input">
+                        <input type="text" id="userInput" placeholder="Type your message...">
+                        <button id="sendBtn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Project & Research Work Section -->
+        <section id="projects">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="card">
+                        <h2 style="text-align: center;">Critical State Detection for Adversarial Attacks in Deep
+                            Reinforcement Learning</h2>
+                        <p>
+                            Conducted research on enhancing the robustness of Deep Reinforcement Learning (DRL) agents
+                            against adversarial
+                            attacks, recognizing the vulnerability of these models in critical applications. Proposed
+                            statistical and model-based
+                            approaches to identify key states within an episode, demonstrating that targeting less than
+                            1%
+                            of states could
+                            decrease agent performance by over 40%. Developed a long-term impact classifier to
+                            efficiently
+                            identify critical
+                            states, achieving an 80.3% reduction in average computation time compared to previous
+                            methodologies.
+                        </p>
+                        <p>2021 20th IEEE International Conference on Machine Learning and Applications (ICMLA)</p>
+                        <a href="https://doi.org/10.1109/ICMLA52953.2021.00279"
+                            target="_blank">10.1109/ICMLA52953.2021.00279</a>
+                    </div>
+                    <div class="card">
+                        <h2>Adversarial Attack Analysis on Autonomous Vehicle Steering Prediction</h2>
+                        <p>Conducted research on adversarial attacks in autonomous vehicle systems, focusing on steering
+                            angle prediction using a nine-layer convolutional neural network. Simulated diverse driving
+                            scenarios in Unity to evaluate the impact of adversarial attacks. Under FGSM, observed
+                            steering
+                            angle deviations of up to 6°, with a 12% reduction in lane-keeping performance. Patch-based
+                            attacks resulted in a 15% increase in collision rates. </p>
+                        <p><span>Yet to be Published</p></span>
+                    </div>
+                    <div class="card">
+                        <h2>KnowMeBot</h2>
+                        <p>
+
+                            I developed a chatbot using OpenAI and LangChain to simulate my persona and answer questions
+                            from a custom dataset.
+                            By leveraging Retrieval-Augmented Generation (RAG), the chatbot delivers context-based,
+                            high-quality interactions.
+                            Deployed using Flask, it provides a seamless real-time chat interface with robust handling
+                            of
+                            out-of-scope queries, ensuring an engaging and reliable user experience.
+                        </p>
+                        <a href="https://example.com" target="_blank">Learn More</a>
+                    </div>
+                    <div class="card">
+                        <h2>VisionBridge</h2>
+                        <p>I developed a bi-directional content accessibility tool designed to bridge the gap between
+                            sighted and blind users by converting text to Braille and Braille to text. The tool supports
+                            seamless interaction through both audio and Braille formats, ensuring inclusivity. It
+                            incorporates a CNN-based Braille character classification model, achieving 97% accuracy,
+                            making
+                            the solution highly scalable and enhancing real-time accessibility for diverse user needs.
+                        </p>
+                        <a href="https://example.com" target="_blank">Learn More</a>
+                    </div>
+                    <div class="card">
+                        <h2>Flight Delay Predictor</h2>
+                        <p>DDeveloped a predictive model to forecast flight delays, combining binary classification to
+                            identify delayed flights and regression analysis to estimate delay duration. The model
+                            utilized
+                            a Random Forest Classifier and Gradient Boosting Regressor, achieving high accuracy by
+                            addressing data imbalance with SMOTE and integrating comprehensive flight and weather
+                            datasets.
+                            This solution enhances operational efficiency by providing actionable insights for airlines
+                            and
+                            passengers.</p>
+                        <a href="https://example.com" target="_blank">Learn More</a>
+                    </div>
+                </div>
+                <button class="prev carosal_button" onclick="moveCarousel(-1)">&#10094;</button>
+                <button class="next carosal_button" onclick="moveCarousel(1)">&#10095;</button>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 Sujith Sivasankaran. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
