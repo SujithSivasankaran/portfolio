@@ -39,9 +39,10 @@ a {
     border-bottom: 2px solid white;
     z-index: 10;
     width: 100%;
-    background-image: url(nav-bg2.png);
+    background-color: #2b3a7b;
+    /* background-image: url(nav-bg2.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 }
 .header {
     /* background-color: #2b3a7b; */
@@ -90,7 +91,7 @@ a {
 }
 
 .nav-link:hover {
-    color: #0077b5; /* Change hover color to a lighter shade for better visibility */
+    color: #2b3a7b; /* Change hover color to a lighter shade for better visibility */
 }
 .nav-link {
     position: relative;
@@ -147,9 +148,10 @@ a {
     }
 
     .nav-menu.active {
-        background-image: url(nav-bg2.png);
+        /* background-image: url(nav-bg2.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+    background-color: #2b3a7b;
         /* background-color: #2b3a7b;  */
         left: 0;
     }
@@ -182,8 +184,11 @@ a {
 
 .social-links a {
     font-size: 2.5rem;
-    color: black;
+    color: #fff;
     transition: color 0.3s, transform 0.3s;
+     border-radius: 100%; 
+    /* border:2px solid #fff;  */
+    /* background-color: white; */
 }
 
 .social-links a:hover {
@@ -220,9 +225,11 @@ a {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    background-color: #ffffff;
     background-image: url('intro-bg.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; 
+     /* border-bottom: 1px solid #2b3a7b; */
 }
 
 
@@ -250,6 +257,12 @@ a {
     line-height: 4.4vw;
     color: #fff;
 }
+.left h2 {
+    font-size: 3vw;
+    line-height: 4.4vw;
+    color: #fff;
+}
+
 
 .left p {
     font-size: 2vw;
@@ -260,9 +273,24 @@ a {
     margin-bottom: 4vw;
 }
 
-.left p span {
-    color: #ec5660;
+/* .left p span {
+    color: #607bf3;
     text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;
+} */
+
+.animated-text{
+    color: #2b3a7b;
+text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;
+
+}
+@keyframes fade {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.animated-text {
+    animation: fade 4s infinite;
 }
 
 .content button {
@@ -346,7 +374,6 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top:2px solid #2b3a7b;
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     /* background: linear-gradient(to bottom, rgba(100, 100, 100, 0.8), rgba(50, 50, 50, 0.5)); */
 }
@@ -394,7 +421,8 @@ a {
     width: 50%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid black;
+    border: 2px solid #2b3a7b;
+    
 }
 
 @keyframes fadeIn {
@@ -469,9 +497,13 @@ a {
         color: #0077b5;
         text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;
     }
+    .about-heading{
+        text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;
+    }
 }
 
 @media (min-width: 800px) {
+    
     .about-content button {
         display: none;
     }
@@ -505,18 +537,15 @@ a {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background-color: #bfbbbb;
+    background-color: #f8f9ff;
     height: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* border:1px solid black; */
 }
 
 .chat-header {
     background-color: #2b3a7b;
     min-height: 2rem;
-    /* color: black;
-    text-align: center;
-    font-size: 2rem;
-    padding:1rem;
-    color: #fff; */
 }
 
 .chat-messages {
@@ -540,9 +569,7 @@ a {
     text-align: right;
     margin: 0 1rem;
 }
-.ri-github-fill, .ri-linkedin-fill {
-    color: #2b3a7b;
-}
+
 .message.bit {
     align-self: flex-start;
     text-align: left;
@@ -557,7 +584,7 @@ a {
 .message .text {
     padding: 0.8rem;
     border-radius: 8px;
-    background-color: #0077b5;
+    background-color: #fff;
     color: black;
     font-size: 1.6rem;
     line-height: 1.6;
@@ -587,7 +614,7 @@ a {
     padding: 1.5rem 2rem;
     border: none;
     background-color: #2b3a7b;
-    color: black;
+    color: #fff;
     font-size: 1.6rem;
     cursor: pointer;
 }
@@ -650,11 +677,7 @@ a {
         font-size: 1.4rem;
     }
 }
-
-/* Project & Research Work Section */
-/* .projects{
-    background: linear-gradient(to bottom, rgba(100, 100, 100, 0.8), rgba(50, 50, 50, 0.5));
-} */
+/* projects */
 
 .carousel-container {
     position: relative;
@@ -676,13 +699,11 @@ a {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     background-color: #fff;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     box-sizing: border-box;
     min-height: 300px;
-    /* border:2px solid black; */
 }
 .plot{
     max-width: 900px;
@@ -708,71 +729,25 @@ a {
     text-decoration: none;
 }
 
-.carosal_button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    color: black;
-    border: none;
-    padding: 10px;
-    /* cursor: pointer; */
-    font-size: 20px;
-    /* border-radius: 50%; */
-    z-index: 10;
-    margin:0 20px 0 20px;
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 10px; */
 }
 
-/* .carosal_button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-} */
-
-.prev {
-    left: 10px;
+.carousel-indicators .indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
 }
 
-.next {
-    right: 10px;
+.carousel-indicators .indicator.active {
+    background-color: #333;
 }
 
-@media (max-width: 800px) {
- 
-    .carousel {
-        display: flex;
-        scroll-snap-align: start;
-    }
-    
-    .carousel-container {
-        padding: 10px;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        display: flex;
-        scroll-behavior: smooth;
-    }
-
-    .card {
-        padding: 15px;
-        scroll-snap-align: center;
-    }
-
-    .card h2 {
-        font-size: 2rem;
-    }
-
-    .card p {
-        font-size: 1.3rem;
-    }
-
-    .card a {
-        font-size: 1.3rem;
-    }
-
-    .carosal_button {
-        /* font-size: 16px;
-        padding: 8px; */
-        display:None;
-    }
-}
 
 
 .section-title {
@@ -895,23 +870,13 @@ section {
 .po {
     color: #2b3a7b;
     font-weight: bold;
-    /* background-color: #fff; */
-    /* padding: 0 10px; */
     border-radius: 5px;
-    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
 }
 
 
-
-
-
-
-/* Section Backgrounds */
-.about, .chat-box-section, .projects, .skills  {
+ .chat-box-section, .projects, .skills  {
     padding: 60px 20px;
     border-top: 2px solid #2b3a7b; 
-    border-bottom: 2px solid #2b3a7b; 
+
 }
-
-
 

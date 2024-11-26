@@ -21,6 +21,27 @@ function closeMenu() {
 }
 
 
+
+const texts = [
+    "Smarter",
+    "Tailored",
+    "Adaptive",
+    "Robust",
+    "Scalable",
+    "Reliable",
+    "Versatile",
+    "Strategic"
+];
+    let index = 0;
+
+    function changeText() {
+        const animatedText = document.querySelector('.animated-text');
+        animatedText.textContent = texts[index];
+        index = (index + 1) % texts.length;
+    }
+
+    setInterval(changeText, 4000);
+    
 document.addEventListener("DOMContentLoaded", () => {
     const chatMessages = document.getElementById("chatMessages");
     const userInput = document.getElementById("userInput");
@@ -56,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Simulated bot reply
             setTimeout(() => {
-                appendMessage("AI SUJITH", "I will check and get back to you.");
+                appendMessage("Genie", "I will check and get back to you.");
             }, 1000);
         }
     });
@@ -69,38 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Carousel functionality
-let currentIndex = 0;
-let touchStartX = 0; // Store the initial touch position for swipe detection
-let touchEndX = 0;   // Store the final touch position for swipe detection
 
-function moveCarousel(direction) {
-    const carousel = document.querySelector('.carousel');
-    const totalCards = document.querySelectorAll('.card').length;
-    currentIndex = (currentIndex + direction + totalCards) % totalCards;
-    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-
-// Swipe detection for mobile devices
-function handleSwipeStart(event) {
-    touchStartX = events.touches[0].clientX; // Get the touch start position
-}
-
-function handleSwipeEnd(event) {
-    touchEndX = event.changedTouches[0].clientX; // Get the touch end position
-
-    if (touchStartX - touchEndX > 50) {
-        // Swipe left, move to the next card
-        moveCarousel(1);
-    } else if (touchEndX - touchStartX > 50) {
-        // Swipe right, move to the previous card
-        moveCarousel(-1);
-    }
-}
-
-// Add event listeners for swipe functionality
-document.querySelector('.carousel-container').addEventListener('touchstart', handleSwipeStart); // Detect touch start
-document.querySelector('.carousel-container').addEventListener('touchend', handleSwipeEnd);   // Detect touch end
 
 
 
@@ -135,4 +125,59 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
+
+
+
+
+
+let currentSlide = 0;
+const totalSlides = document.querySelectorAll('.carousel .card').length;
+
+function updateIndicators() {
+    document.querySelectorAll('.carousel-indicators .indicator').forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentSlide);
+    });
+}
+
+function moveToSlide(slideIndex) {
+    currentSlide = slideIndex;
+    const carousel = document.querySelector('.carousel');
+    carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+    updateIndicators();
+}
+
+function autoScroll() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    moveToSlide(currentSlide);
+}
+
+setInterval(autoScroll, 3000); // Change slide every 3 seconds
+
+document.querySelector('.carousel').addEventListener('touchstart', handleTouchStart, false);
+document.querySelector('.carousel').addEventListener('touchmove', handleTouchMove, false);
+
+let xStart = null;
+
+function handleTouchStart(evt) {
+    xStart = evt.touches[0].clientX;
+}
+
+function handleTouchMove(evt) {
+    if (!xStart) {
+        return;
+    }
+
+    let xEnd = evt.touches[0].clientX;
+    let xDiff = xStart - xEnd;
+
+    if (xDiff > 0) {
+        currentSlide = (currentSlide + 1) % totalSlides;
+    } else {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    }
+
+    moveToSlide(currentSlide);
+    xStart = null;
+}
 
