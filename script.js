@@ -92,45 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const carouselContainer = document.querySelector('.carousel-container');
-    const cards = document.querySelectorAll('.card');
-    let currentIndex = 0;
-    let autoScroll;
-
-    function scrollNext() {
-        currentIndex = (currentIndex + 1) % cards.length;
-        carouselContainer.scrollTo({
-            left: carouselContainer.clientWidth * currentIndex,
-            behavior: 'smooth'
-        });
-    }
-
-    function startAutoScroll() {
-        autoScroll = setInterval(scrollNext, 3000); // Scroll every 3 seconds
-    }
-
-    function stopAutoScroll() {
-        clearInterval(autoScroll);
-    }
-
-    if (window.innerWidth <= 800) {
-        startAutoScroll();
-    }
-
-    carouselContainer.addEventListener('touchstart', stopAutoScroll); // Stop scrolling on touch
-});
-
-
-
-
-
-
-
-
 let currentSlide = 0;
 const totalSlides = document.querySelectorAll('.carousel .card').length;
 
@@ -152,7 +113,7 @@ function moveToSlide(slideIndex) {
 //     moveToSlide(currentSlide);
 // }
 
-// setInterval(autoScroll, 6000);
+// setInterval(autoScroll, 3000);
 
 document.querySelector('.carousel').addEventListener('touchstart', handleTouchStart, false);
 document.querySelector('.carousel').addEventListener('touchmove', handleTouchMove, false);
