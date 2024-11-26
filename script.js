@@ -41,54 +41,97 @@ const texts = [
     }
 
     setInterval(changeText, 4000);
-
-document.addEventListener("DOMContentLoaded", () => {
-    const chatMessages = document.getElementById("chatMessages");
-    const userInput = document.getElementById("userInput");
-    const sendBtn = document.getElementById("sendBtn");
-
-    // Function to append a message to the chat
-    function appendMessage(name, text, isUser = false) {
-        const message = document.createElement("div");
-        message.classList.add("message", isUser ? "user" : "bit");
-
-        const nameElem = document.createElement("div");
-        nameElem.classList.add("name");
-        nameElem.textContent = name;
-
-        const textElem = document.createElement("div");
-        textElem.classList.add("text");
-        textElem.textContent = text;
-
-        message.appendChild(nameElem);
-        message.appendChild(textElem);
-        chatMessages.appendChild(message);
-
-        // Scroll to the bottom
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    // Event listener for sending a message
-    sendBtn.addEventListener("click", () => {
-        const text = userInput.value.trim();
-        if (text) {
-            appendMessage("User", text, true);
-            userInput.value = "";
-
-            // Simulated bot reply
-            setTimeout(() => {
-                appendMessage("Genie", "I will check and get back to you.");
-            }, 1000);
+    document.addEventListener("DOMContentLoaded", () => {
+        const chatMessages = document.getElementById("chatMessages");
+        const userInput = document.getElementById("userInput");
+        const sendBtn = document.getElementById("sendBtn");
+    
+        let chatHistory = []; 
+        
+        function appendMessage(name, text, isUser = false) {
+            const message = document.createElement("div");
+            message.classList.add("message", isUser ? "user" : "bot");
+    
+            const nameElem = document.createElement("div");
+            nameElem.classList.add("name");
+            nameElem.textContent = name;
+    
+            const textElem = document.createElement("div");
+            textElem.classList.add("text");
+            textElem.textContent = text;
+    
+            message.appendChild(nameElem);
+            message.appendChild(textElem);
+            chatMessages.appendChild(message);
+    
+            chatMessages.scrollTop = chatMessages.scrollHeight; 
         }
-    });
-
-    // Allow pressing Enter to send the message
-    userInput.addEventListener("keypress", (e) => {
-        if (e.key === "Enter") {
-            sendBtn.click();
+    
+       
+        function showTypingIndicator() {
+            const typingIndicator = document.createElement("div");
+            typingIndicator.id = "typingIndicator";
+            typingIndicator.textContent = "Sujith is typing...";
+            chatMessages.appendChild(typingIndicator);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         }
+    
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById("typingIndicator");
+            if (typingIndicator) typingIndicator.remove();
+        }
+    
+        
+        async function getReplyFromServer(userText) {
+            const url = 'https://189af7f9-3f99-4cee-8627-7e875ecbcd25-00-3hkexupn8bld9.pike.replit.dev/chat'; 
+            const params = {
+                question: userText,
+                chat_history: JSON.stringify(chatHistory)
+            };
+    
+            try {
+                showTypingIndicator(); 
+    
+                const response = await fetch(`${url}?${new URLSearchParams(params)}`);
+                removeTypingIndicator();
+    
+                if (response.ok) {
+                    const data = await response.json();
+                    return data.answer;
+                } else {
+                    console.error(`Error: ${response.status}`);
+                    return "Sorry, I couldn't get a response from the server.";
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                removeTypingIndicator();
+                return "Sorry, there was an error connecting to the server.";
+            }
+        }
+    
+        // Send a message
+        sendBtn.addEventListener("click", async () => {
+            const text = userInput.value.trim();
+            if (text) {
+                appendMessage("User", text, true); 
+                userInput.value = "";
+    
+                const reply = await getReplyFromServer(text); 
+                appendMessage("Sujith", reply); 
+    
+                
+                chatHistory.push([text, reply]);
+            }
+        });
+    
+        
+        userInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                sendBtn.click();
+            }
+        });
     });
-});
+    
 
 
 
