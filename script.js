@@ -41,7 +41,7 @@ const texts = [
     }
 
     setInterval(changeText, 4000);
-    
+
 document.addEventListener("DOMContentLoaded", () => {
     const chatMessages = document.getElementById("chatMessages");
     const userInput = document.getElementById("userInput");
@@ -147,12 +147,12 @@ function moveToSlide(slideIndex) {
     updateIndicators();
 }
 
-function autoScroll() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    moveToSlide(currentSlide);
-}
+// function autoScroll() {
+//     currentSlide = (currentSlide + 1) % totalSlides;
+//     moveToSlide(currentSlide);
+// }
 
-setInterval(autoScroll, 3000); // Change slide every 3 seconds
+// setInterval(autoScroll, 6000);
 
 document.querySelector('.carousel').addEventListener('touchstart', handleTouchStart, false);
 document.querySelector('.carousel').addEventListener('touchmove', handleTouchMove, false);
