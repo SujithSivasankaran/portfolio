@@ -91,7 +91,7 @@ a {
 }
 
 .nav-link:hover {
-    color: #2b3a7b; /* Change hover color to a lighter shade for better visibility */
+    color: #050606; /* Change hover color to a lighter shade for better visibility */
 }
 .nav-link {
     position: relative;
@@ -105,7 +105,7 @@ a {
     display: block;
     margin-top: 5px;
     right: 0;
-    background: #0077b5;
+    background: #050606;
     transition: width 0.4s ease;
     -webkit-transition: width 0.4s ease;
 }
@@ -113,7 +113,7 @@ a {
 .nav-link:hover::after {
     width: 100%;
     left: 0;
-    background: #0077b5;
+    background: #050606;
 }
 .hamburger {
     display: none;
@@ -197,7 +197,8 @@ a {
 }
 
 .social-links a:first-child:hover {
-    color: #333;
+    color: #0077b5;
+    ;
 }
 
 @media screen and (max-width: 768px) {
@@ -299,6 +300,7 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
     background-color: #2b3a7b;
     color: white;
     border: none;
+    margin-top: 50px;
     border-radius: 5px;
     font-weight: 700;
 }
@@ -381,6 +383,7 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
 .about-content {
     width: 60%;
     animation: fadeIn 2s ease-out;
+    padding-right: 5px;
 }
 
 .about h2 {
@@ -461,6 +464,7 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
 
     .about-content {
         width: 80%;
+        padding:none
     }
 
     .about-img {
