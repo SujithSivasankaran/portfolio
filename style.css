@@ -64,6 +64,11 @@ a {
     font-weight: 500;
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.5), 0 0 5px rgba(0, 0, 0, 0.3);
+    
+}
+
+.nav-logo-img{
+    height: 40px;
 }
 
 .nav-menu {
@@ -146,6 +151,10 @@ a {
         left: 0;
     }
 
+    .nav-logo-img{
+        height: 25px;
+    }
+
     .nav-item {
         margin: 2.5rem 0;
         
@@ -215,7 +224,7 @@ a {
     position: relative;
     overflow: hidden;
     background-color: #ffffff;
-    background-image: url('intro-bg.png');
+    background-image: url('./images/intro-bg.png');
     background-repeat: no-repeat;
     background-size: cover; 
 }
@@ -433,7 +442,7 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
 
 @media (max-width: 800px) {
     .about-img img {
-        content: url('profile.jpg');
+        content: url('./images/profile.jpg');
     }
 
     .about {
@@ -442,7 +451,7 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
         text-align: center;
         border-top: none;
         border-bottom: none;
-        background-image: url('intro-bg.png');
+        background-image: url('./images/intro-bg.png');
         background-repeat: no-repeat;
         background-size: cover;
     }
