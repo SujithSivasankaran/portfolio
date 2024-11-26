@@ -86,13 +86,13 @@ a {
 .nav-link {
     font-size: 2rem;
     font-weight: 400;
-    color: white; /* Change text color to white for better visibility */
+    color: white;
     transition: color 0.3s;
 }
 
-.nav-link:hover {
-    color: #050606; /* Change hover color to a lighter shade for better visibility */
-}
+/* .nav-link:hover {
+    color: #050606;
+} */
 .nav-link {
     position: relative;
 }
@@ -148,11 +148,7 @@ a {
     }
 
     .nav-menu.active {
-        /* background-image: url(nav-bg2.png);
-    background-repeat: no-repeat;
-    background-size: cover; */
-    background-color: #2b3a7b;
-        /* background-color: #2b3a7b;  */
+        background-color: #2b3a7b;
         left: 0;
     }
 
@@ -187,8 +183,6 @@ a {
     color: #fff;
     transition: color 0.3s, transform 0.3s;
      border-radius: 100%; 
-    /* border:2px solid #fff;  */
-    /* background-color: white; */
 }
 
 .social-links a:hover {
@@ -300,7 +294,7 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
     background-color: #2b3a7b;
     color: white;
     border: none;
-    margin-top: 50px;
+    margin-top: 30px;
     border-radius: 5px;
     font-weight: 700;
 }
@@ -383,7 +377,7 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
 .about-content {
     width: 60%;
     animation: fadeIn 2s ease-out;
-    padding-right: 5px;
+    padding-right: 10px;
 }
 
 .about h2 {
