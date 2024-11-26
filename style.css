@@ -40,12 +40,8 @@ a {
     z-index: 10;
     width: 100%;
     background-color: #2b3a7b;
-    /* background-image: url(nav-bg2.png);
-    background-repeat: no-repeat;
-    background-size: cover; */
 }
-.header {
-    /* background-color: #2b3a7b; */
+.header {  
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, box-shadow 0.3s;
@@ -61,7 +57,6 @@ a {
     align-items: center;
     padding: 1.5rem 2rem;
     z-index: 1;
-    /* background-color: #2b3a7b; */
 }
 
 .nav-logo {
@@ -69,7 +64,6 @@ a {
     font-weight: 500;
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(255, 255, 255, 0.5), 0 0 5px rgba(0, 0, 0, 0.3);
-    /* text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black; */
 }
 
 .nav-menu {
@@ -90,9 +84,6 @@ a {
     transition: color 0.3s;
 }
 
-/* .nav-link:hover {
-    color: #050606;
-} */
 .nav-link {
     position: relative;
 }
@@ -224,7 +215,6 @@ a {
     background-image: url('intro-bg.png');
     background-repeat: no-repeat;
     background-size: cover; 
-     /* border-bottom: 1px solid #2b3a7b; */
 }
 
 
@@ -370,8 +360,6 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
     display: flex;
     justify-content: center;
     align-items: center;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-    /* background: linear-gradient(to bottom, rgba(100, 100, 100, 0.8), rgba(50, 50, 50, 0.5)); */
 }
 
 .about-content {
@@ -517,14 +505,9 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
 
 /* Chatbot Styles */
 
-/* .chat-box-section {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(200, 200, 200, 0.8)); 
-}  */
-
 .chat {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
 }
 
 .chat-container {
@@ -538,7 +521,6 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
     background-color: #f8f9ff;
     height: 500px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* border:1px solid black; */
 }
 
 .chat-header {
@@ -784,7 +766,6 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
 .skills {
     padding: 50px 0;
     text-align: center;
-    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(200, 200, 200, 0.8));  */
 }
 
 .skills-container {
@@ -822,13 +803,13 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
 
 
 section {
-    padding: 60px 20px; /* Adjust padding for better spacing */
+    padding: 60px 20px; 
 }
 
 
 
 .about, .projects {
-    min-height: 80vh; /* 80% of viewport height */
+    min-height: 80vh;
 }
 
 
@@ -856,9 +837,7 @@ section {
 
 
 .footer {
-    /* background-color: #2b3a7b; */
     border-top: 2px solid #2b3a7b; 
-  
     background-image: url('footer-background.jpg');
     background-size: cover;
     background-position: center;
