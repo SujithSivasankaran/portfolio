@@ -83,7 +83,7 @@ const texts = [
     
         
         async function getReplyFromServer(userText) {
-            const url = 'https://189af7f9-3f99-4cee-8627-7e875ecbcd25-00-3hkexupn8bld9.pike.replit.dev/chat'; 
+            const url = 'https://knowmebot.onrender.com/chat'; 
             const params = {
                 question: userText,
                 chat_history: JSON.stringify(chatHistory)
