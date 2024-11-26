@@ -144,12 +144,12 @@ function updateIndicators() {
     });
 }
 
-// function moveToSlide(slideIndex) {
-//     currentSlide = slideIndex;
-//     const carousel = document.querySelector('.carousel');
-//     carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
-//     updateIndicators();
-// }
+function moveToSlide(slideIndex) {
+    currentSlide = slideIndex;
+    const carousel = document.querySelector('.carousel');
+    carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+    updateIndicators();
+}
 
 // function autoScroll() {
 //     currentSlide = (currentSlide + 1) % totalSlides;
@@ -158,30 +158,30 @@ function updateIndicators() {
 
 // setInterval(autoScroll, 3000);
 
-document.querySelector('.carousel').addEventListener('touchstart', handleTouchStart, false);
-document.querySelector('.carousel').addEventListener('touchmove', handleTouchMove, false);
+// document.querySelector('.carousel').addEventListener('touchstart', handleTouchStart, false);
+// document.querySelector('.carousel').addEventListener('touchmove', handleTouchMove, false);
 
-let xStart = null;
+// let xStart = null;
 
-function handleTouchStart(evt) {
-    xStart = evt.touches[0].clientX;
-}
+// function handleTouchStart(evt) {
+//     xStart = evt.touches[0].clientX;
+// }
 
-function handleTouchMove(evt) {
-    if (!xStart) {
-        return;
-    }
+// function handleTouchMove(evt) {
+//     if (!xStart) {
+//         return;
+//     }
 
-    let xEnd = evt.touches[0].clientX;
-    let xDiff = xStart - xEnd;
+//     let xEnd = evt.touches[0].clientX;
+//     let xDiff = xStart - xEnd;
 
-    if (xDiff > 0) {
-        currentSlide = (currentSlide + 1) % totalSlides;
-    } else {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    }
+//     if (xDiff > 0) {
+//         currentSlide = (currentSlide + 1) % totalSlides;
+//     } else {
+//         currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+//     }
 
-    moveToSlide(currentSlide);
-    xStart = null;
-}
+//     moveToSlide(currentSlide);
+//     xStart = null;
+// }
 
