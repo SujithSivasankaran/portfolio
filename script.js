@@ -47,7 +47,7 @@ const texts = [
         const sendBtn = document.getElementById("sendBtn");
     
         let chatHistory = []; 
-        
+
         function appendMessage(name, text, isUser = false) {
             const message = document.createElement("div");
             message.classList.add("message", isUser ? "user" : "bot");
@@ -144,12 +144,12 @@ function updateIndicators() {
     });
 }
 
-function moveToSlide(slideIndex) {
-    currentSlide = slideIndex;
-    const carousel = document.querySelector('.carousel');
-    carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
-    updateIndicators();
-}
+// function moveToSlide(slideIndex) {
+//     currentSlide = slideIndex;
+//     const carousel = document.querySelector('.carousel');
+//     carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+//     updateIndicators();
+// }
 
 // function autoScroll() {
 //     currentSlide = (currentSlide + 1) % totalSlides;
