@@ -301,6 +301,17 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
     font-weight: 700;
 }
 
+.content button:hover {
+    font-size: 1.2vw;
+    padding: 1.3vw 2.3vw;
+    background-color: white;
+    color: #2b3a7b;
+    border: none;
+    margin-top: 30px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
 .right {
     display: flex;
     justify-content: center;
@@ -514,7 +525,7 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
      .about-content span {
         color: #2b3a7b;
         font-weight: bold;
-        border-radius: 5px; color: #0077b5;
+        border-radius: 5px; color: #2b3a7b;
         
     }
 
@@ -604,7 +615,7 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
     padding: 1.5rem;
     border: none;
     outline: none;
-    font-size: 1.6rem;
+    font-size: 1.6rem; 
 }
 
 .chat-input button {
@@ -729,7 +740,6 @@ text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5
 .carousel-indicators {
     display: flex;
     justify-content: center;
-    /* margin-top: 10px; */
 }
 
 .carousel-indicators .indicator {
@@ -855,7 +865,6 @@ section {
 
 .footer {
     border-top: 2px solid #2b3a7b; 
-    background-image: url('footer-background.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -864,7 +873,7 @@ section {
 
 
 
- .chat-box-section, .projects, .skills  {
+.chat-box-section, .projects, .skills  {
     padding: 60px 20px;
     border-top: 2px solid #2b3a7b; 
 

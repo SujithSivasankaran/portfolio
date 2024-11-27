@@ -41,6 +41,14 @@ const texts = [
     }
 
     setInterval(changeText, 4000);
+
+    function generateSessionId() {
+        return 'session-' + Math.random().toString(36).substr(2, 9) + '-' + Date.now();
+    }
+    
+    const sessionId = generateSessionId();
+    console.log("Session ID:", sessionId);
+    
     document.addEventListener("DOMContentLoaded", () => {
         const chatMessages = document.getElementById("chatMessages");
         const userInput = document.getElementById("userInput");
@@ -85,31 +93,39 @@ const texts = [
         async function getReplyFromServer(userText) {
             const url = 'https://knowmebot.onrender.com/chat'; 
             const params = {
-                question: userText,
-                chat_history: JSON.stringify(chatHistory)
+            question: userText,
+            chat_history: JSON.stringify(chatHistory),
+            session_id: sessionId
             };
-    
+        
             try {
-                showTypingIndicator(); 
-    
-                const response = await fetch(`${url}?${new URLSearchParams(params)}`);
-                removeTypingIndicator();
-    
-                if (response.ok) {
-                    const data = await response.json();
-                    return data.answer;
-                } else {
-                    console.error(`Error: ${response.status}`);
-                    return "Sorry, I couldn't get a response from the server.";
-                }
+            showTypingIndicator(); 
+            sendBtn.textContent = "Wait..."; 
+            sendBtn.style.backgroundColor = "red"; 
+            sendBtn.disabled = true; 
+        
+            const response = await fetch(`${url}?${new URLSearchParams(params)}`);
+            removeTypingIndicator();
+            sendBtn.disabled = false; 
+            sendBtn.textContent = "Send"; 
+            sendBtn.style.backgroundColor = "#2b3a7b"; 
+        
+            if (response.ok) {
+                const data = await response.json();
+                return data.answer;
+            } else {
+                console.error(`Error: ${response.status}`);
+                return "Sorry, I couldn't get a response from the server.";
+            }
             } catch (error) {
-                console.error("Error:", error);
-                removeTypingIndicator();
-                return "Sorry, there was an error connecting to the server.";
+            console.error("Error:", error);
+            removeTypingIndicator();
+            sendBtn.disabled = false; 
+            return "Sorry, there was an error connecting to the server.";
             }
         }
     
-        // Send a message
+
         sendBtn.addEventListener("click", async () => {
             const text = userInput.value.trim();
             if (text) {
