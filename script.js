@@ -40,7 +40,7 @@ const texts = [
         index = (index + 1) % texts.length;
     }
 
-    setInterval(changeText, 4000);
+    setInterval(changeText, 4001);
 
     function generateSessionId() {
         return 'session-' + Math.random().toString(36).substr(2, 9) + '-' + Date.now();
@@ -173,31 +173,38 @@ function moveToSlide(slideIndex) {
 // }
 
 // setInterval(autoScroll, 3000);
+  
 
-// document.querySelector('.carousel').addEventListener('touchstart', handleTouchStart, false);
-// document.querySelector('.carousel').addEventListener('touchmove', handleTouchMove, false);
 
-// let xStart = null;
+document.querySelector('.carousel').addEventListener('touchstart', handleTouchStart, false);
+document.querySelector('.carousel').addEventListener('touchmove', handleTouchMove, false);
+document.querySelector('.carousel').addEventListener('touchend', handleTouchEnd, false);
+document.querySelector('.carousel').addEventListener('touchcancel', handleTouchEnd, false);
 
-// function handleTouchStart(evt) {
-//     xStart = evt.touches[0].clientX;
-// }
+let xStart = null;
 
-// function handleTouchMove(evt) {
-//     if (!xStart) {
-//         return;
-//     }
+function handleTouchStart(evt) {
+    xStart = evt.touches[0].clientX;
+}
 
-//     let xEnd = evt.touches[0].clientX;
-//     let xDiff = xStart - xEnd;
+function handleTouchMove(evt) {
+    if (!xStart) {
+        return;
+    }
 
-//     if (xDiff > 0) {
-//         currentSlide = (currentSlide + 1) % totalSlides;
-//     } else {
-//         currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-//     }
+    let xEnd = evt.touches[0].clientX;
+    let xDiff = xStart - xEnd;
 
-//     moveToSlide(currentSlide);
-//     xStart = null;
-// }
+    if (xDiff > 0) {
+        currentSlide = (currentSlide + 1) % totalSlides;
+    } else {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    }
+    xStart = null;
+}
+
+function handleTouchEnd(evt) {
+    xStart = null;
+}
+    
 
