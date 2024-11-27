@@ -27,7 +27,7 @@ const texts = [
     "Tailored",
     "Adaptive",
     "Robust",
-    "Scalable",
+    "Scaleable",
     "Reliable",
     "Versatile",
     "Strategic"
