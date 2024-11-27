@@ -232,7 +232,7 @@ a {
     position: relative;
     overflow: hidden;
     background-color: #ffffff;
-    background-image: url('./images/intro-bg4.png');
+    background-image: url('./images/intro-bg.png');
     background-repeat: no-repeat;
     background-size: cover; 
 }
@@ -260,7 +260,7 @@ a {
 .left h1 {
     font-size: 4vw;
     line-height: 4.4vw;
-    color: #694242;
+    color: #fff;
 }
 .left h2 {
     font-size: 3vw;
@@ -286,7 +286,6 @@ a {
 .animated-text{
     color: #2b3a7b;
     font-family: 'Inkfree', sans-serif;
-    font-style: bold;
     text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;
 
 }
