@@ -319,8 +319,7 @@ a {
 @media (max-width: 800px) {
    
     .main {
-        margin-top:50px;
-        display: none1;
+        display: none;
     }
 
     .content {
@@ -453,7 +452,6 @@ a {
 @media (max-width: 800px) {
     .about-img img {
         content: url('./images/profile.png');
-        border:none;
     }
 
     .about {

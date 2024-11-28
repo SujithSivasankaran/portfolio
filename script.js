@@ -176,12 +176,12 @@ function moveToSlide(slideIndex) {
     updateIndicators();
 }
 
-// function autoScroll() {
-//     currentSlide = (currentSlide + 1) % totalSlides;
-//     moveToSlide(currentSlide);
-// }
+function autoScroll() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    moveToSlide(currentSlide);
+}
 
-// setInterval(autoScroll, 3000);
+setInterval(autoScroll, 6000);
 
 let xStart = null;
 let yStart = null;
