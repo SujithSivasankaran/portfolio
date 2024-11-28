@@ -197,23 +197,21 @@ function handleTouchMove(evt) {
     // Determine if swipe is horizontal or vertical
     if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > threshold) {
         // Horizontal swipe detected
-        evt.preventDefault(); // Prevent scrolling only for horizontal swipes
+        evt.preventDefault(); // Prevent scrolling for horizontal swipes
         if (xDiff > 0) {
             // Swipe left
             currentSlide = (currentSlide + 1) % totalSlides;
             moveToSlide(currentSlide);
         } else {
-            
+            // Swipe right
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             moveToSlide(currentSlide);
         }
 
-        // updateCarousel();
+        // Reset touch positions after processing the swipe
+        xStart = null;
+        yStart = null;
     }
-
-    // Reset touch start positions
-    xStart = null;
-    yStart = null;
 }
 
 function handleTouchEnd() {
@@ -221,10 +219,6 @@ function handleTouchEnd() {
     yStart = null;
 }
 
-// function updateCarousel() {
-//     const offset = -currentSlide * 100; // Adjust slide offset
-//     carousel.style.transform = `translateX(${offset}%)`;
-// }
 
 // Event listeners
 const carousel = document.querySelector('.carousel');
