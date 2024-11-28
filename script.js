@@ -176,7 +176,7 @@ function moveToSlide(slideIndex) {
 
 let xStart = null;
 let yStart = null;
-const threshold = 10; // Minimum distance to detect as a swipe
+const threshold = 10;
 
 function handleTouchStart(evt) {
     xStart = evt.touches[0].clientX;
@@ -194,24 +194,22 @@ function handleTouchMove(evt) {
     const xDiff = xStart - xEnd;
     const yDiff = yStart - yEnd;
 
-    // Determine if swipe is horizontal or vertical
+   
     if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > threshold) {
-        // Horizontal swipe detected
-        evt.preventDefault(); // Prevent scrolling for horizontal swipes
+        
+        evt.preventDefault(); 
         if (xDiff > 0) {
-            // Swipe left
             currentSlide = (currentSlide + 1) % totalSlides;
             moveToSlide(currentSlide);
         } else {
-            // Swipe right
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             moveToSlide(currentSlide);
         }
-
-        // Reset touch positions after processing the swipe
-        xStart = null;
-        yStart = null;
     }
+
+   
+    xStart = null;
+    yStart = null;
 }
 
 function handleTouchEnd() {
@@ -220,7 +218,7 @@ function handleTouchEnd() {
 }
 
 
-// Event listeners
+
 const carousel = document.querySelector('.carousel');
 carousel.addEventListener('touchstart', handleTouchStart, false);
 carousel.addEventListener('touchmove', handleTouchMove, false);
