@@ -402,10 +402,7 @@ a {
     width: 60%;
     animation: fadeIn 2s ease-out;
     padding-right: 10px;
-    
-}
-.about-content p{
-   font-size: medium;
+    font-size: medium;
 }
 
 .about h2 {
@@ -417,6 +414,7 @@ a {
     letter-spacing: 2px;
     font-weight: bold;
     position: relative;
+    text-shadow: -0.5px -0.5px 0 white, 0.5px -0.5px 0 white, -0.5px 0.5px 0 white, 0.5px 0.5px 0 white;
 }
 
 .about h2::after {
@@ -435,7 +433,7 @@ a {
     font-weight: 0;
     line-height: 1.8;
     padding: 10px;
-    color:rgb(255, 255, 255);
+    color: black;
 }
 
 .about-img {
