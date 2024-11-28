@@ -1,3 +1,22 @@
+const texts = [
+    "Smarter",
+    "Tailored",
+    "Adaptive",
+    "Robust",
+    "Scaleable",
+    "Reliable",
+    "Versatile",
+    "Strategic"
+];
+let index = 0;
+
+function changeText() {
+    const animatedText = document.querySelector('.animated-text');
+    animatedText.textContent = texts[index];
+    index = (index + 1) % texts.length;
+}
+
+setInterval(changeText, 4000);
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
@@ -22,95 +41,75 @@ function closeMenu() {
 
 
 
-const texts = [
-    "Smarter",
-    "Tailored",
-    "Adaptive",
-    "Robust",
-    "Scaleable",
-    "Reliable",
-    "Versatile",
-    "Strategic"
-];
-    let index = 0;
+function generateSessionId() {
+    return 'session-' + Math.random().toString(36).substr(2, 9) + '-' + Date.now();
+}
 
-    function changeText() {
-        const animatedText = document.querySelector('.animated-text');
-        animatedText.textContent = texts[index];
-        index = (index + 1) % texts.length;
+const sessionId = generateSessionId();
+console.log("Session ID:", sessionId);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const chatMessages = document.getElementById("chatMessages");
+    const userInput = document.getElementById("userInput");
+    const sendBtn = document.getElementById("sendBtn");
+
+    let chatHistory = [];
+
+    function appendMessage(name, text, isUser = false) {
+        const message = document.createElement("div");
+        message.classList.add("message", isUser ? "user" : "bot");
+
+        const nameElem = document.createElement("div");
+        nameElem.classList.add("name");
+        nameElem.textContent = name;
+
+        const textElem = document.createElement("div");
+        textElem.classList.add("text");
+        textElem.textContent = text;
+
+        message.appendChild(nameElem);
+        message.appendChild(textElem);
+        chatMessages.appendChild(message);
+
+        chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    setInterval(changeText, 4001);
+    appendMessage("Sujith", "Hi, I’m Sujith Sivasankaran! Feel free to ask me anything about myself. I’ll answer your questions, so you can get to know me better. Think of me as your interactive resume bot!");
 
-    function generateSessionId() {
-        return 'session-' + Math.random().toString(36).substr(2, 9) + '-' + Date.now();
+    function showTypingIndicator() {
+        const typingIndicator = document.createElement("div");
+        typingIndicator.id = "typingIndicator";
+        typingIndicator.textContent = "Sujith is typing...";
+        chatMessages.appendChild(typingIndicator);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
     }
-    
-    const sessionId = generateSessionId();
-    console.log("Session ID:", sessionId);
-    
-    document.addEventListener("DOMContentLoaded", () => {
-        const chatMessages = document.getElementById("chatMessages");
-        const userInput = document.getElementById("userInput");
-        const sendBtn = document.getElementById("sendBtn");
-    
-        let chatHistory = []; 
 
-        function appendMessage(name, text, isUser = false) {
-            const message = document.createElement("div");
-            message.classList.add("message", isUser ? "user" : "bot");
-    
-            const nameElem = document.createElement("div");
-            nameElem.classList.add("name");
-            nameElem.textContent = name;
-    
-            const textElem = document.createElement("div");
-            textElem.classList.add("text");
-            textElem.textContent = text;
-    
-            message.appendChild(nameElem);
-            message.appendChild(textElem);
-            chatMessages.appendChild(message);
-    
-            chatMessages.scrollTop = chatMessages.scrollHeight; 
-        }
-    
-        appendMessage("Sujith", "Hi, I’m Sujith Sivasankaran! Feel free to ask me anything about myself. I’ll answer your questions, so you can get to know me better. Think of me as your interactive resume bot!"); 
+    function removeTypingIndicator() {
+        const typingIndicator = document.getElementById("typingIndicator");
+        if (typingIndicator) typingIndicator.remove();
+    }
 
-        function showTypingIndicator() {
-            const typingIndicator = document.createElement("div");
-            typingIndicator.id = "typingIndicator";
-            typingIndicator.textContent = "Sujith is typing...";
-            chatMessages.appendChild(typingIndicator);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-    
-        function removeTypingIndicator() {
-            const typingIndicator = document.getElementById("typingIndicator");
-            if (typingIndicator) typingIndicator.remove();
-        }
-    
-        
-        async function getReplyFromServer(userText) {
-            const url = 'https://knowmebot.onrender.com/chat'; 
-            const params = {
+
+    async function getReplyFromServer(userText) {
+        const url = 'https://knowmebot.onrender.com/chat';
+        const params = {
             question: userText,
             chat_history: JSON.stringify(chatHistory),
             session_id: sessionId
-            };
-        
-            try {
-            showTypingIndicator(); 
-            sendBtn.textContent = "Wait..."; 
-            sendBtn.style.backgroundColor = "red"; 
-            sendBtn.disabled = true; 
-        
+        };
+
+        try {
+            showTypingIndicator();
+            sendBtn.textContent = "Wait...";
+            sendBtn.style.backgroundColor = "red";
+            sendBtn.disabled = true;
+
             const response = await fetch(`${url}?${new URLSearchParams(params)}`);
             removeTypingIndicator();
-            sendBtn.disabled = false; 
-            sendBtn.textContent = "Send"; 
-            sendBtn.style.backgroundColor = "#2b3a7b"; 
-        
+            sendBtn.disabled = false;
+            sendBtn.textContent = "Send";
+            sendBtn.style.backgroundColor = "#2b3a7b";
+
             if (response.ok) {
                 const data = await response.json();
                 return data.answer;
@@ -118,37 +117,37 @@ const texts = [
                 console.error(`Error: ${response.status}`);
                 return "Sorry, I couldn't get a response from the server.";
             }
-            } catch (error) {
+        } catch (error) {
             console.error("Error:", error);
             removeTypingIndicator();
-            sendBtn.disabled = false; 
+            sendBtn.disabled = false;
             return "Sorry, there was an error connecting to the server.";
-            }
         }
-    
+    }
 
-        sendBtn.addEventListener("click", async () => {
-            const text = userInput.value.trim();
-            if (text) {
-                appendMessage("User", text, true); 
-                userInput.value = "";
-    
-                const reply = await getReplyFromServer(text); 
-                appendMessage("Sujith", reply); 
-    
-                
-                chatHistory.push([text, reply]);
-            }
-        });
-    
-        
-        userInput.addEventListener("keypress", (e) => {
-            if (e.key === "Enter") {
-                sendBtn.click();
-            }
-        });
+
+    sendBtn.addEventListener("click", async () => {
+        const text = userInput.value.trim();
+        if (text) {
+            appendMessage("User", text, true);
+            userInput.value = "";
+
+            const reply = await getReplyFromServer(text);
+            appendMessage("Sujith", reply);
+
+
+            chatHistory.push([text, reply]);
+        }
     });
-    
+
+
+    userInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            sendBtn.click();
+        }
+    });
+});
+
 
 
 
@@ -174,7 +173,7 @@ function moveToSlide(slideIndex) {
 // }
 
 // setInterval(autoScroll, 3000);
-  
+
 
 
 document.querySelector('.carousel').addEventListener('touchstart', handleTouchStart, false);
@@ -207,5 +206,5 @@ function handleTouchMove(evt) {
 function handleTouchEnd(evt) {
     xStart = null;
 }
-    
+
 
