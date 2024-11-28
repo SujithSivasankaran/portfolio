@@ -201,12 +201,14 @@ function handleTouchMove(evt) {
         if (xDiff > 0) {
             // Swipe left
             currentSlide = (currentSlide + 1) % totalSlides;
+            moveToSlide(currentSlide);
         } else {
-            // Swipe right
+            
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            moveToSlide(currentSlide);
         }
 
-        updateCarousel();
+        // updateCarousel();
     }
 
     // Reset touch start positions
@@ -219,10 +221,10 @@ function handleTouchEnd() {
     yStart = null;
 }
 
-function updateCarousel() {
-    const offset = -currentSlide * 100; // Adjust slide offset
-    carousel.style.transform = `translateX(${offset}%)`;
-}
+// function updateCarousel() {
+//     const offset = -currentSlide * 100; // Adjust slide offset
+//     carousel.style.transform = `translateX(${offset}%)`;
+// }
 
 // Event listeners
 const carousel = document.querySelector('.carousel');
