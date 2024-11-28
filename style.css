@@ -278,27 +278,6 @@ a {
     margin-bottom: 4vw;
 }
 
-/* .left p span {
-    color: #607bf3;
-    text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;
-} */
-
-.animated-text{
-    color: #2b3a7b;
-    font-family: 'Inkfree', sans-serif;
-    padding-left: 10px;
-    text-shadow: -0.5px -0.5px 0 white, 0.5px -0.5px 0 white, -0.5px 0.5px 0 white, 0.5px 0.5px 0 white;
-
-}
-@keyframes fade {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-.animated-text {
-    animation: fade 4s infinite;
-}
 
 .content button {
     font-size: 1.2vw;
@@ -1029,4 +1008,15 @@ section {
         .footer-social-links{
             position: absolute; right: 20px;
        }
+    }
+
+
+
+    .animated-text {
+        color: #2b3a7b;
+        font-family: 'Inkfree', sans-serif;
+        padding-left: 10px;
+        text-shadow: -0.5px -0.5px 0 white, 0.5px -0.5px 0 white, -0.5px 0.5px 0 white, 0.5px 0.5px 0 white;
+        opacity: 0; /* Start invisible */
+        transition: opacity 1s ease-in-out; /* Smooth fade-in/out effect */
     }

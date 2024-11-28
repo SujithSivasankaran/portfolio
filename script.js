@@ -12,11 +12,20 @@ let index = 0;
 
 function changeText() {
     const animatedText = document.querySelector('.animated-text');
-    animatedText.textContent = texts[index];
-    index = (index + 1) % texts.length;
+    animatedText.style.opacity = '0'; 
+
+    setTimeout(() => {
+        animatedText.textContent = texts[index];
+        animatedText.style.opacity = '1';
+        index = (index + 1) % texts.length;
+    }, 1000); 
 }
 
-setInterval(changeText, 4000);
+
+setInterval(changeText, 3000);
+changeText(); 
+
+
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
