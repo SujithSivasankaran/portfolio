@@ -178,7 +178,6 @@ let xStart = null;
 let yStart = null;
 const threshold = 10; 
 
-
 function handleTouchStart(evt) {
     xStart = evt.touches[0].clientX;
     yStart = evt.touches[0].clientY;
@@ -195,34 +194,33 @@ function handleTouchMove(evt) {
     const xDiff = xStart - xEnd;
     const yDiff = yStart - yEnd;
 
-   
+    
     if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > threshold) {
+       
         evt.preventDefault(); 
         if (xDiff > 0) {
-           
+            
             currentSlide = (currentSlide + 1) % totalSlides;
         } else {
            
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
         }
-
         moveToSlide(currentSlide);
 
-      
+       
         xStart = null;
         yStart = null;
     }
 }
 
 function handleTouchEnd() {
-   
     xStart = null;
     yStart = null;
 }
-
 
 
 carousel.addEventListener('touchstart', handleTouchStart, false);
 carousel.addEventListener('touchmove', handleTouchMove, false);
 carousel.addEventListener('touchend', handleTouchEnd, false);
 carousel.addEventListener('touchcancel', handleTouchEnd, false);
+
