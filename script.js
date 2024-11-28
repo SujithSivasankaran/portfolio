@@ -75,7 +75,8 @@ const texts = [
             chatMessages.scrollTop = chatMessages.scrollHeight; 
         }
     
-       
+        appendMessage("Sujith", "Hi, I’m Sujith Sivasankaran! Feel free to ask me anything about myself. I’ll answer your questions, so you can get to know me better. Think of me as your interactive resume bot!"); 
+
         function showTypingIndicator() {
             const typingIndicator = document.createElement("div");
             typingIndicator.id = "typingIndicator";
