@@ -3,7 +3,7 @@ const texts = [
     "Tailored",
     "Adaptive",
     "Robust",
-    "Scaleable",
+    "Scalable",
     "Reliable",
     "Versatile",
     "Strategic"
