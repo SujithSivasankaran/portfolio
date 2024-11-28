@@ -545,7 +545,9 @@ a {
     }
 
     .about {
-        background: linear-gradient(to bottom, #6c7aa1, white);
+        /* background: linear-gradient(to bottom, #6c7aa1 20%, white 100%); */
+        background: linear-gradient(to bottom, #6c7aa1 20%, #6c7aa1 50%, white 100%);
+
         /* background-color: #2b3a7b; */
     }
     
@@ -1045,7 +1047,7 @@ section {
     @media (min-width: 829px) {
         .skills{
             
-            min-height: 700px;
+            min-height: 00px;
         }
         
     } 

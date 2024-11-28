@@ -2,8 +2,8 @@
 <svg width="2560" height="150" viewBox="0 0 2560 150" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#c3c7db" />
-            <stop offset="100%" stop-color="#6c7aa1" />
+             <stop offset="100%" stop-color="#6c7aa1" />   
+            
         </linearGradient>
     </defs>
     <path d="M0 14.0492C0 14.0492 96.5318 23.8556 198.519 25.5464C360.827 28.2373 463.741 18.8051 633.333 14.0492C752.046 10.7201 817.147 6.42863 937.037 5.19126C1084.68 3.6674 1197.58 5.97542 1314.81 9.97268C1611.3 20.0818 1703.82 50.4958 1987.41 48.6755C2104.42 47.9244 2216.86 41.5075 2346.67 28.6575C2437.06 19.7089 2560 0 2560 0V150H0V14.0492Z" fill="url(#gradient)"/>
