@@ -174,37 +174,52 @@ function moveToSlide(slideIndex) {
 
 // setInterval(autoScroll, 3000);
 
-
-
-document.querySelector('.carousel').addEventListener('touchstart', handleTouchStart, false);
-document.querySelector('.carousel').addEventListener('touchmove', handleTouchMove, false);
-document.querySelector('.carousel').addEventListener('touchend', handleTouchEnd, false);
-document.querySelector('.carousel').addEventListener('touchcancel', handleTouchEnd, false);
-
 let xStart = null;
+let yStart = null;
+const threshold = 10; // Minimum distance to detect as a swipe
 
 function handleTouchStart(evt) {
     xStart = evt.touches[0].clientX;
+    yStart = evt.touches[0].clientY;
 }
 
 function handleTouchMove(evt) {
-    if (!xStart) {
+    if (!xStart || !yStart) {
         return;
     }
 
-    let xEnd = evt.touches[0].clientX;
-    let xDiff = xStart - xEnd;
+    const xEnd = evt.touches[0].clientX;
+    const yEnd = evt.touches[0].clientY;
 
-    if (xDiff > 0) {
-        currentSlide = (currentSlide + 1) % totalSlides;
-    } else {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    const xDiff = xStart - xEnd;
+    const yDiff = yStart - yEnd;
+
+    // Determine if swipe is horizontal or vertical
+    if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > threshold) {
+        // Horizontal swipe detected
+        evt.preventDefault(); // Prevent scrolling
+        if (xDiff > 0) {
+            // Swipe left
+            currentSlide = (currentSlide + 1) % totalSlides;
+        } else {
+            // Swipe right
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        }
     }
+
+    // Reset touch start positions
     xStart = null;
+    yStart = null;
 }
 
 function handleTouchEnd(evt) {
     xStart = null;
+    yStart = null;
 }
 
-
+// Event listeners
+const carousel = document.querySelector('.carousel');
+carousel.addEventListener('touchstart', handleTouchStart, false);
+carousel.addEventListener('touchmove', handleTouchMove, false);
+carousel.addEventListener('touchend', handleTouchEnd, false);
+carousel.addEventListener('touchcancel', handleTouchEnd, false);
