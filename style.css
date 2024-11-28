@@ -425,7 +425,7 @@ a {
 .about-img img {
     width: 50%;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     border: 2px solid #2b3a7b;
     
 }
@@ -452,6 +452,7 @@ a {
 @media (max-width: 800px) {
     .about-img img {
         content: url('./images/profile.png');
+        border: none;
     }
 
     .about {
@@ -487,7 +488,7 @@ a {
         width: 60%;
         margin: 0;
         border-radius: 100%;
-        border: 2px solid white;
+        
     }
 
     .about-content button {
