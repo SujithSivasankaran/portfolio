@@ -1003,7 +1003,7 @@ section {
     @media (min-width: 570px) {
         
         .footer-logo img {
-            position: absolute; left: 50px;
+            position: absolute; left: 20px;
         }
         .footer-social-links{
             position: absolute; right: 20px;
