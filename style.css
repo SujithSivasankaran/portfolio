@@ -435,7 +435,7 @@ a {
     font-weight: 0;
     line-height: 1.8;
     padding: 10px;
-    color:black;
+    color:rgb(255, 255, 255);
 }
 
 .about-img {
@@ -484,7 +484,8 @@ a {
         border-top: none;
         border-bottom: none;
         margin-top:30px;
-        background: linear-gradient(to bottom, #2b3a7b, white);
+        background: linear-gradient(to bottom, #2b3a7b 0%, #ced7ef 80%, white 100%);
+
     }
 
     .about-content {
@@ -537,7 +538,7 @@ a {
     }
 
     .about {
-         background: linear-gradient(to bottom, #6c7aa1 0%, #7480a1 40%, white 100%);
+         background: linear-gradient(to bottom, #6c7aa1 0%, #ced7ef 80%, white 100%);
     }
     
     .not_for_full_screen {
