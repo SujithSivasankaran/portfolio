@@ -232,19 +232,67 @@ function moveToSlide(slideIndex) {
 // carousel.addEventListener('touchmove', handleTouchMove, false);
 // carousel.addEventListener('touchend', handleTouchEnd, false);
 // carousel.addEventListener('touchcancel', handleTouchEnd, false);
-let touchstartX = 0
-let touchendX = 0
+// let touchstartX = 0
+// let touchendX = 0
     
+// function checkDirection() {
+//   if (touchendX < touchstartX) alert('swiped left!')
+//   if (touchendX > touchstartX) alert('swiped right!')
+// }
+
+// document.addEventListener('touchstart', e => {
+//   touchstartX = e.changedTouches[0].screenX
+// })
+
+// document.addEventListener('touchend', e => {
+//   touchendX = e.changedTouches[0].screenX
+//   checkDirection()
+// })
+
+
+let touchstartX = 0;
+let touchendX = 0;
+
+// Get the target div element
+const swipeArea = document.getElementById("swipeArea");
+
 function checkDirection() {
-  if (touchendX < touchstartX) alert('swiped left!')
-  if (touchendX > touchstartX) alert('swiped right!')
+  if (touchendX < touchstartX) alert("Swiped left!");
+  if (touchendX > touchstartX) alert("Swiped right!");
 }
 
-document.addEventListener('touchstart', e => {
-  touchstartX = e.changedTouches[0].screenX
-})
+// Add touchstart and touchend listeners to the swipeArea
+swipeArea.addEventListener("touchstart", (e) => {
+  const touch = e.changedTouches[0];
+  const bounds = swipeArea.getBoundingClientRect();
 
-document.addEventListener('touchend', e => {
-  touchendX = e.changedTouches[0].screenX
-  checkDirection()
-})
+  // Ensure the touchstart occurs inside the swipeArea
+  if (
+    touch.clientX >= bounds.left &&
+    touch.clientX <= bounds.right &&
+    touch.clientY >= bounds.top &&
+    touch.clientY <= bounds.bottom
+  ) {
+    touchstartX = touch.screenX;
+  } else {
+    touchstartX = null; // Ignore touch outside the area
+  }
+});
+
+swipeArea.addEventListener("touchend", (e) => {
+  if (touchstartX === null) return; // Skip if touch didn't start inside the area
+
+  const touch = e.changedTouches[0];
+  const bounds = swipeArea.getBoundingClientRect();
+
+  // Ensure the touchend occurs inside the swipeArea
+  if (
+    touch.clientX >= bounds.left &&
+    touch.clientX <= bounds.right &&
+    touch.clientY >= bounds.top &&
+    touch.clientY <= bounds.bottom
+  ) {
+    touchendX = touch.screenX;
+    checkDirection();
+  }
+});
