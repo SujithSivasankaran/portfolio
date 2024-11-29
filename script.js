@@ -183,53 +183,101 @@ function moveToSlide(slideIndex) {
 
 // setInterval(autoScroll, 6000);
 
-let xStart = null;
-let yStart = null;
-const threshold = 10; 
+// let xStart = null;
+// let yStart = null;
+// const threshold = 10; 
 
-function handleTouchStart(evt) {
-    xStart = evt.touches[0].clientX;
-    yStart = evt.touches[0].clientY;
-}
+// function handleTouchStart(evt) {
+//     xStart = evt.touches[0].clientX;
+//     yStart = evt.touches[0].clientY;
+// }
 
-function handleTouchMove(evt) {
-    if (!xStart || !yStart) {
-        return;
-    }
+// function handleTouchMove(evt) {
+//     if (!xStart || !yStart) {
+//         return;
+//     }
 
-    const xEnd = evt.touches[0].clientX;
-    const yEnd = evt.touches[0].clientY;
+//     const xEnd = evt.touches[0].clientX;
+//     const yEnd = evt.touches[0].clientY;
 
-    const xDiff = xStart - xEnd;
-    const yDiff = yStart - yEnd;
+//     const xDiff = xStart - xEnd;
+//     const yDiff = yStart - yEnd;
 
     
-    if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > threshold) {
+//     if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > threshold) {
        
-        evt.preventDefault(); 
-        if (xDiff > 0) {
+//         evt.preventDefault(); 
+//         if (xDiff > 0) {
             
-            currentSlide = (currentSlide + 1) % totalSlides;
-        } else {
+//             currentSlide = (currentSlide + 1) % totalSlides;
+//         } else {
            
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        }
-        moveToSlide(currentSlide);
+//             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+//         }
+//         moveToSlide(currentSlide);
 
        
-        xStart = null;
-        yStart = null;
+//         xStart = null;
+//         yStart = null;
+//     }
+// }
+
+// function handleTouchEnd() {
+//     xStart = null;
+//     yStart = null;
+// }
+
+
+// carousel.addEventListener('touchstart', handleTouchStart, false);
+// carousel.addEventListener('touchmove', handleTouchMove, false);
+// carousel.addEventListener('touchend', handleTouchEnd, false);
+// carousel.addEventListener('touchcancel', handleTouchEnd, false);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const swipeArea = document.getElementById("swipeArea");
+    let startX = 0;
+    let startY = 0;
+    let endX = 0;
+    let endY = 0;
+  
+    // Start touch event
+    swipeArea.addEventListener("touchstart", function (e) {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    });
+  
+    // End touch event
+    swipeArea.addEventListener("touchend", function (e) {
+      endX = e.changedTouches[0].clientX;
+      endY = e.changedTouches[0].clientY;
+  
+      handleSwipe();
+    });
+  
+    // Function to handle swipe
+    function handleSwipe() {
+      const deltaX = endX - startX;
+      const deltaY = endY - startY;
+  
+      // Detect horizontal swipe
+      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+        if (deltaX > 0) {
+          console.log("Swiped Right");
+          swipeRight();
+        } else {
+          console.log("Swiped Left");
+          swipeLeft();
+        }
+      }
     }
-}
-
-function handleTouchEnd() {
-    xStart = null;
-    yStart = null;
-}
-
-
-carousel.addEventListener('touchstart', handleTouchStart, false);
-carousel.addEventListener('touchmove', handleTouchMove, false);
-carousel.addEventListener('touchend', handleTouchEnd, false);
-carousel.addEventListener('touchcancel', handleTouchEnd, false);
-
+  
+    // Actions for swipe directions
+    function swipeRight() {
+      alert("You swiped right!");
+    }
+  
+    function swipeLeft() {
+      alert("You swiped left!");
+    }
+  });
+  
