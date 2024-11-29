@@ -232,52 +232,19 @@ function moveToSlide(slideIndex) {
 // carousel.addEventListener('touchmove', handleTouchMove, false);
 // carousel.addEventListener('touchend', handleTouchEnd, false);
 // carousel.addEventListener('touchcancel', handleTouchEnd, false);
+let touchstartX = 0
+let touchendX = 0
+    
+function checkDirection() {
+  if (touchendX < touchstartX) alert('swiped left!')
+  if (touchendX > touchstartX) alert('swiped right!')
+}
 
-document.addEventListener("DOMContentLoaded", function () {
-    const swipeArea = document.getElementById("swipeArea");
-    let startX = 0;
-    let startY = 0;
-    let endX = 0;
-    let endY = 0;
-  
-    // Start touch event
-    swipeArea.addEventListener("touchstart", function (e) {
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-    });
-  
-    // End touch event
-    swipeArea.addEventListener("touchend", function (e) {
-      endX = e.changedTouches[0].clientX;
-      endY = e.changedTouches[0].clientY;
-  
-      handleSwipe();
-    });
-  
-    // Function to handle swipe
-    function handleSwipe() {
-      const deltaX = endX - startX;
-      const deltaY = endY - startY;
-  
-      // Detect horizontal swipe
-      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
-        if (deltaX > 0) {
-          console.log("Swiped Right");
-          swipeRight();
-        } else {
-          console.log("Swiped Left");
-          swipeLeft();
-        }
-      }
-    }
-  
-    // Actions for swipe directions
-    function swipeRight() {
-      alert("You swiped right!");
-    }
-  
-    function swipeLeft() {
-      alert("You swiped left!");
-    }
-  });
-  
+document.addEventListener('touchstart', e => {
+  touchstartX = e.changedTouches[0].screenX
+})
+
+document.addEventListener('touchend', e => {
+  touchendX = e.changedTouches[0].screenX
+  checkDirection()
+})
