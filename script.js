@@ -176,123 +176,59 @@ function moveToSlide(slideIndex) {
     updateIndicators();
 }
 
-// function autoScroll() {
-//     currentSlide = (currentSlide + 1) % totalSlides;
-//     moveToSlide(currentSlide);
-// }
-
-// setInterval(autoScroll, 6000);
-
-// let xStart = null;
-// let yStart = null;
-// const threshold = 10; 
-
-// function handleTouchStart(evt) {
-//     xStart = evt.touches[0].clientX;
-//     yStart = evt.touches[0].clientY;
-// }
-
-// function handleTouchMove(evt) {
-//     if (!xStart || !yStart) {
-//         return;
-//     }
-
-//     const xEnd = evt.touches[0].clientX;
-//     const yEnd = evt.touches[0].clientY;
-
-//     const xDiff = xStart - xEnd;
-//     const yDiff = yStart - yEnd;
-
-    
-//     if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > threshold) {
-       
-//         evt.preventDefault(); 
-//         if (xDiff > 0) {
-            
-//             currentSlide = (currentSlide + 1) % totalSlides;
-//         } else {
-           
-//             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-//         }
-//         moveToSlide(currentSlide);
-
-       
-//         xStart = null;
-//         yStart = null;
-//     }
-// }
-
-// function handleTouchEnd() {
-//     xStart = null;
-//     yStart = null;
-// }
-
-
-// carousel.addEventListener('touchstart', handleTouchStart, false);
-// carousel.addEventListener('touchmove', handleTouchMove, false);
-// carousel.addEventListener('touchend', handleTouchEnd, false);
-// carousel.addEventListener('touchcancel', handleTouchEnd, false);
-// let touchstartX = 0
-// let touchendX = 0
-    
-// function checkDirection() {
-//   if (touchendX < touchstartX) alert('swiped left!')
-//   if (touchendX > touchstartX) alert('swiped right!')
-// }
-
-// document.addEventListener('touchstart', e => {
-//   touchstartX = e.changedTouches[0].screenX
-// })
-
-// document.addEventListener('touchend', e => {
-//   touchendX = e.changedTouches[0].screenX
-//   checkDirection()
-// })
-
-
-let touchstartX = 0;
-let touchendX = 0;
-
-// Get the target div element
-const swipeArea = document.getElementById("swipeArea");
-
-function checkDirection() {
-  if (touchendX < touchstartX) alert("Swiped left!");
-  if (touchendX > touchstartX) alert("Swiped right!");
+function autoScroll() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    moveToSlide(currentSlide);
 }
 
-// Add touchstart and touchend listeners to the swipeArea
-swipeArea.addEventListener("touchstart", (e) => {
-  const touch = e.changedTouches[0];
-  const bounds = swipeArea.getBoundingClientRect();
+setInterval(autoScroll, 6000);
 
-  // Ensure the touchstart occurs inside the swipeArea
-  if (
-    touch.clientX >= bounds.left &&
-    touch.clientX <= bounds.right &&
-    touch.clientY >= bounds.top &&
-    touch.clientY <= bounds.bottom
-  ) {
-    touchstartX = touch.screenX;
-  } else {
-    touchstartX = null; // Ignore touch outside the area
-  }
-});
+let xStart = null;
+let yStart = null;
+const threshold = 10; 
 
-swipeArea.addEventListener("touchend", (e) => {
-  if (touchstartX === null) return; // Skip if touch didn't start inside the area
+function handleTouchStart(evt) {
+    xStart = evt.touches[0].clientX;
+    yStart = evt.touches[0].clientY;
+}
 
-  const touch = e.changedTouches[0];
-  const bounds = swipeArea.getBoundingClientRect();
+function handleTouchMove(evt) {
+    if (!xStart || !yStart) {
+        return;
+    }
 
-  // Ensure the touchend occurs inside the swipeArea
-  if (
-    touch.clientX >= bounds.left &&
-    touch.clientX <= bounds.right &&
-    touch.clientY >= bounds.top &&
-    touch.clientY <= bounds.bottom
-  ) {
-    touchendX = touch.screenX;
-    checkDirection();
-  }
-});
+    const xEnd = evt.touches[0].clientX;
+    const yEnd = evt.touches[0].clientY;
+
+    const xDiff = xStart - xEnd;
+    const yDiff = yStart - yEnd;
+
+    
+    if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > threshold) {
+       
+        evt.preventDefault(); 
+        if (xDiff > 0) {
+            
+            currentSlide = (currentSlide + 1) % totalSlides;
+        } else {
+           
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        }
+        moveToSlide(currentSlide);
+
+       
+        xStart = null;
+        yStart = null;
+    }
+}
+
+function handleTouchEnd() {
+    xStart = null;
+    yStart = null;
+}
+
+
+carousel.addEventListener('touchstart', handleTouchStart, false);
+carousel.addEventListener('touchmove', handleTouchMove, false);
+carousel.addEventListener('touchend', handleTouchEnd, false);
+carousel.addEventListener('touchcancel', handleTouchEnd, false);
